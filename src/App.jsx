@@ -27,107 +27,60 @@
 //   )
 // }
 // export default App;
-//////////////////////////////////////////////////////////////////////////
+// import { useState } from "react";
 // const App=()=>{
-//   const Display=()=>{
-//     alert("welcome to react event")
+//   const [count,setCount]=useState(0)
+//   const myinc=()=>{
+//     setCount(count+1)
 //   }
+//   const mydec=()=>{
+//     if(count==0)
+//     {
+//       alert("no decrement")
+//     }
+//     else{
+// setCount(count-1)
+//   }
+// }
 //   return(
 //     <>
-//     <h1>welcome to app</h1>
-//     <button onClick={Display}>click me</button>
+//     <h1>counter app</h1>
+//    <button onClick={myinc}>increment</button>
+//     <h1>{count}</h1>
+//      <button onClick={mydec}>decrement</button>
 //     </>
 //   )
-// }
-// export default App;
-////////////////////////////////////////////////////
-// const App=()=>{
-//   const Myname=(nm)=>{
-//     alert("hello i am "+ nm +"from bhopal")
 //   }
+// export default App;
+//////////////////////////////////////////
+// import { useState,useEffect } from "react";
+// const App=()=>{
+//   const [myval,setMyval]=useState(0)
+//   useEffect(()=>{
+//     setMyval(myval+1)
+//   })
+  
 //   return(
 //     <>
-//     <h1>welcome to app</h1>
-//     <button onClick={()=>{Myname("himanshi")}}>click me</button>
-//     </>
+//     <h1>welcome to my  app :{myval}</h1>
+//  </>
 //   )
-// }
-// export default App;
-////////////////////////////////////////////
-// const App=()=>{
-//   const Myname=(fnm,snm)=>{
-//     alert(`welcome ${fnm} ${snm}! we are from bhopal`)
 //   }
-//   return(
-//     <>
-//     <h1>welcome to app</h1>
-//     <button onClick={()=>{Myname("himanshi","malviya")}}>click me</button>
-//     </>
-//   )
-// }
 // export default App;
-//////////////////////////////////////////////////
-// const App=()=>{
-//   const Display=(e)=>{
-//     // alert(`welcome`)
-//     console.log(e.type);
-    
-//   }
-//   return(
-//     <>
-//     <h1>welcome to app</h1>
-//     <button onClick={Display}>click me</button>
-//     </>
-//   )
-// }
-// export default App;
-//////////////////////////////////////////////////
-// const App=()=>{
-//   const Myname=(nm,e)=>{
-//     alert(`myname:${nm} type :${e.type}`)
-
-    
-//   }
-//   return(
-//     <>
-//     <h1>welcome to app</h1>
-//     <button onClick={(e)=>{Myname("sachin",e)}}>click me</button>
-//     </>
-//   )
-// }
-// export default App;
-/////////////////////////////////////////////////////////////////
-// const App=()=>{
-//   const Myname=(e)=>{
-//     let nm=e.target.name;
-   
-//     let val=e.target.value;
-//     alert(`Name ${nm} value ${val}`)
-   
-    
-//   }
-//   return(
-//     <>
-//     <h1>welcome to app</h1>
-//     <button name="mybtn1" value="btnwal" onClick={Myname}>click me</button>
-//     </>
-//   )
-// }
-// export default App;
-/////////////////////////////////////////
+//////////////( with settimeeout)//////////////
+import { useState,useEffect } from "react";
 const App=()=>{
-  const handleinput=(e)=>{
-    let name=e.target.name;
-    let value=e.target.value;
-    // console.log({name:value});              //{key ,value}
-        console.log({[name]:value});             //another type
-  }
+  const [myval,setMyval]=useState(0)
+  useEffect(()=>{
+    setTimeout(()=>{
+setMyval(myval+1);
+    },5000)
+  })
+  
   return(
     <>
-    <h1>welcome to app</h1>
-    enter city :<input type="text" name="mycity" value="bhopal"
-    onChange={handleinput}/>
-     </>
+    <h1>welcome to my  app :{myval}</h1>
+ </>
   )
-}
+  }
 export default App;
