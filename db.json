@@ -1,0 +1,18 @@
+{
+  "student": [
+    {
+      "emp_num": 101,
+      "emp_name": "tina",
+      "designation": "developer",
+      "city": "bhopal",
+      "id": "0f49"
+    },
+    {
+      "id": "2b81",
+      "emp_num": "101",
+      "emp_name": "himanshi",
+      "designation": "developer",
+      "city": "bhopal"
+    }
+  ]
+}

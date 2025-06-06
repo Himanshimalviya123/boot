@@ -27,60 +27,29 @@
 //   )
 // }
 // export default App;
-// import { useState } from "react";
-// const App=()=>{
-//   const [count,setCount]=useState(0)
-//   const myinc=()=>{
-//     setCount(count+1)
-//   }
-//   const mydec=()=>{
-//     if(count==0)
-//     {
-//       alert("no decrement")
-//     }
-//     else{
-// setCount(count-1)
-//   }
-// }
-//   return(
-//     <>
-//     <h1>counter app</h1>
-//    <button onClick={myinc}>increment</button>
-//     <h1>{count}</h1>
-//      <button onClick={mydec}>decrement</button>
-//     </>
-//   )
-//   }
-// export default App;
-//////////////////////////////////////////
-// import { useState,useEffect } from "react";
-// const App=()=>{
-//   const [myval,setMyval]=useState(0)
-//   useEffect(()=>{
-//     setMyval(myval+1)
-//   })
-  
-//   return(
-//     <>
-//     <h1>welcome to my  app :{myval}</h1>
-//  </>
-//   )
-//   }
-// export default App;
-//////////////( with settimeeout)//////////////
-import { useState,useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
 const App=()=>{
-  const [myval,setMyval]=useState(0)
-  useEffect(()=>{
-    setTimeout(()=>{
-setMyval(myval+1);
-    },5000)
-  })
-  
+  const[input,setInput]=useState({})
+const handleInput=(e)=>{
+  let name=e.target.name;
+  let value=e.target.value;
+setInput(values=>({...values,[name]:value}))
+}
+const handleSubmit=async()=>{
+  let api="http://localhost:3000/student"
+  const response=await axios.post(api,input)
+  alert("data inserted")
+}
   return(
     <>
-    <h1>welcome to my  app :{myval}</h1>
- </>
+    <h1>application form</h1>
+    enter emp_num:<input type="text" name="emp_num" onChange={handleInput}/><br/>
+    enter emp_name:<input type="text" name="emp_name" onChange={handleInput}/><br/>
+    designation:<input type="text" name="designation" onChange={handleInput}/><br/>
+    city:<input type="text" name="city" onChange={handleInput}/><br/>
+    <button onClick={handleSubmit}>click here!!!</button>
+    </>
   )
-  }
+}
 export default App;
