@@ -2,7 +2,7 @@ import Comp2 from "./comp2";
 const Comp1=({user})=>{
     return(
       <>
-      <h1>component-1</h1>
+      <h5>component-1</h5>
     
       <Comp2 user={user}/>
       </>

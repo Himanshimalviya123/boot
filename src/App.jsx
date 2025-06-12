@@ -27,16 +27,42 @@
 //   )
 // }
 // export default App;
-import Comp1 from "./propsdelay/comp1";
-import { useState } from "react";
+// import Comp1 from "./propsdrilling/comp1";
+// import { useState } from "react";
 
-const Appp=()=>{
-  const[user,setUser]=useState("muskan");
+// const Appp=()=>{
+//   const[user,setUser]=useState("muskan");
+//   return(
+//     <>
+//     <h1>welcome:{user}!!!</h1>
+//     <Comp1 user={user}/>
+//     </>
+//   )
+// }
+// export default Appp;
+
+
+
+
+
+import Comp1 from "./propsdrilling/comp1";
+import { useState,createContext } from "react";
+const myContext=createContext();
+
+
+const App=()=>{
+  const[user,setUser]=useState("sakshi");
   return(
     <>
     <h1>welcome:{user}!!!</h1>
-    <Comp1 user={user}/>
+    {/* <button onClick={()=>{setUser("himanshi")}}>click here</button> */}
+    <myContext.Provider value={{user,setUser}}>
+    <Comp1/>
+    </myContext.Provider>
     </>
   )
 }
-export default Appp;
+export default App;
+export {myContext};
+
+
