@@ -40,11 +40,6 @@
 //   )
 // }
 // export default Appp;
-
-
-
-
-
 import Comp1 from "./propsdrilling/comp1";
 import { useState,createContext } from "react";
 const myContext=createContext();
